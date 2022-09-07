@@ -41,9 +41,9 @@ def form_clientes(request):
             nro_cliente1 = info.get("nro_cliente")
             cliente = Cliente(nombre = nombre1, apellido = apellido1, nro_telefono = nro_telefono1, dni = dni1, nro_cliente = nro_cliente1)
             cliente.save()
-            return (render(request, "inicio.html"), {"mensaje": "Cliente creado"})
+            return (render(request, "inicio.html", {"mensaje": "Cliente creado"}))
         else:
-            return (render(request, "inicio.html"), {"mensaje": "Error"})
+            return (render(request, "inicio.html", {"mensaje": "Error"}))
         
     else:
         formulario = Formulario_cliente()
@@ -61,9 +61,9 @@ def form_vendedores(request):
             cuit1 = info.get("cuit")
             vendedor = Vendedor(nombre = nombre1, apellido = apellido1, nro_telefono = nro_telefono1, dni = dni1, cuit = cuit1)
             vendedor.save()
-            return (render(request, "inicio.html"), {"mensaje": "Vendedor creado"})
+            return (render(request, "inicio.html", {"mensaje": "Vendedor creado"}))
         else:
-            return (render(request, "inicio.html"), {"mensaje": "Error"})
+            return (render(request, "inicio.html", {"mensaje": "Error"}))
         
     else:
         formulario = Formulario_vendedor()
@@ -80,9 +80,9 @@ def form_articulos(request):
             precio1 = info.get("precio")
             articulo = Articulo(nombre = nombre1, categoria = categoria1, descripcion = descripcion1, precio = precio1)
             articulo.save()
-            return (render(request, "inicio.html"), {"mensaje": "Articulo creado"})
+            return (render(request, "inicio.html", {"mensaje": "Articulo creado"}))
         else:
-            return (render(request, "inicio.html"), {"mensaje": "Error"})
+            return (render(request, "inicio.html", {"mensaje": "Error"}))
         
     else:
         formulario = Formulario_articulo()
